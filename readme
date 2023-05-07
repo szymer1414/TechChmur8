@@ -1,0 +1,10 @@
+Wykorzystane komendy
+
+docker build -t lab8docker .
+
+docker run -d --name limit512 -v RemoteVol:/logi --memory=512m lab8docker
+
+docker start limit512
+
+docker exec limit512 cat /logi/info.log
+docker stats limit512
